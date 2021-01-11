@@ -12,6 +12,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/schedule")
+@CrossOrigin
 public class TaskScheduleController {
 
     private TaskScheduleService taskScheduleService;

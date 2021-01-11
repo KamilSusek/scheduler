@@ -62,13 +62,14 @@ public class TaskScheduleService {
     }
 
     private void initializeDB() {
-        TaskSchedule taskSchedule = new TaskSchedule("title0", "description");
+        TaskSchedule taskSchedule = new TaskSchedule("Learn Java", "description");
 
-        Task task0 = new Task("title", "description");
-        Task task1 = new Task("title1", "description1");
-        Task task2 = new Task("title2", "description2");
+        Task task0 = new Task("Learn Java's lamba function.", "description");
+        Task task1 = new Task("Learn multithreading", "description1");
+        Task task2 = new Task("Learn OOP in Java", "description2");
 
-        List<Task> array = new ArrayList<Task>();
+
+        List<Task> array = new ArrayList<>();
 
         array.add(task0);
         array.add(task1);
@@ -82,6 +83,27 @@ public class TaskScheduleService {
         taskRepository.save(task0);
         taskRepository.save(task1);
         taskRepository.save(task2);
+
+        TaskSchedule taskSchedule1 = new TaskSchedule("Learn TS", "description");
+
+        Task task00 = new Task("Learn TS.", "description");
+        Task task11 = new Task("Learn multithreading", "description1");
+        Task task22 = new Task("Learn OOP in TS", "description2");
+
+        List<Task> array1 = new ArrayList<>();
+
+        array1.add(task00);
+        array1.add(task11);
+        array1.add(task22);
+
+        taskScheduleRepository.save(taskSchedule1);
+        task00.setTaskSchedule(taskSchedule1);
+        task11.setTaskSchedule(taskSchedule1);
+        task22.setTaskSchedule(taskSchedule1);
+
+        taskRepository.save(task00);
+        taskRepository.save(task11);
+        taskRepository.save(task22);
     }
 
 }
